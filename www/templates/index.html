@@ -47,5 +47,9 @@
       </div>
       <a href="{{movieList.post_movie_web_url}}" data-ui-sref="moviePageView({movie: movieList.post_movie_app_url})" class="icon ion-ios-arrow-forward"></a>
     </ion-item>
+    <div class="text-center marginT15" data-ng-if="AppCtrl.movieData">
+      <a href="#" data-ui-sref="movies" class="button button-positive">Load More</a>
+    </div>
+    <div style="height: 60px"></div>
   </ion-list>
 </ion-content>
