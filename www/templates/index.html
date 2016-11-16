@@ -1,0 +1,51 @@
+<ion-content>
+  <ion-slide-box data-ng-if="AppCtrl.movieData" data-auto-play="true">
+    <ion-slide data-ng-repeat="sliderContent in AppCtrl.movieData.posts | orderBy: '-post_movie_rating' | limitTo: 5 ">
+      <div class="slider-content-wrapper">
+        <div class="slider-content text-center">
+          <h3 href="{{sliderContent.post_movie_web_url}}" data-ui-sref="moviePageView({movie: sliderContent.post_movie_app_url})">{{sliderContent.post_movie_title}}</h3>
+          <img src="" data-ng-src="{{sliderContent.post_movie_banner}}" alt="{{sliderContent.post_movie_title}}">
+          <h5><strong>Release Date: </strong>{{sliderContent.post_movie_year}}</h5>
+          <h5><strong>Ratings: </strong>{{sliderContent.post_movie_rating}}</h5>
+          <div class="list-category-wrapper">
+            <ul class="list-category">
+              <li data-ng-repeat="catrgory in sliderContent.post_movie_catrgory">
+                <a class="button button-light" href="#">
+                  <i class="ion-coffee"></i>
+                  {{catrgory.category_name}}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="list-tags-wrapper">
+            <ul class="list-category">
+              <li data-ng-repeat="tags in sliderContent.post_movie_tags">
+                <a class="button button-light" href="{{tags.tag_url}}" target="_blank">
+                  <i class="ion-film-marker"></i>
+                  {{tags.tag_name}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slide-box>
+  <!--Movie List-->
+  <ion-list>
+    <ion-item data-ng-repeat="movieList in AppCtrl.movieData.posts track by $index" data-ng-class="'item-'+($index+1)" class="item-thumbnail-left item-icon-right">
+      <img src="" data-ng-src="{{movieList.post_movie_banner}}" alt="{{movieList.post_movie_title}}" />
+      <h2>{{movieList.post_movie_title}}</h2>
+      <p><strong>Release Year:</strong> {{movieList.post_movie_year}}</p>
+      <p><strong>Rating:</strong> {{movieList.post_movie_rating}}</p>
+      <div class="listing-list-category-wrapper">
+        <ul class="list-category">
+          <li data-ng-repeat="category in movieList.post_movie_catrgory">
+            <span>{{category.category_name}}</span>
+          </li>
+        </ul>
+      </div>
+      <a href="{{movieList.post_movie_web_url}}" data-ui-sref="moviePageView({movie: movieList.post_movie_app_url})" class="icon ion-ios-arrow-forward"></a>
+    </ion-item>
+  </ion-list>
+</ion-content>
