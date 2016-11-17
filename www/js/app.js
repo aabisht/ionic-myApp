@@ -45,7 +45,7 @@ app.constant('CONSTANTS', {
 
   app: {
     logo: "",
-    title: "Test"
+    title: "Yify"
   },
 
   base_API_URL: "http://testnode25.herokuapp.com"

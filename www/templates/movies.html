@@ -2,7 +2,7 @@
   <!--Movie List-->
   <ion-list>
     <ion-item data-ng-repeat="movieList in MovieCtrl.dataPost track by $index" data-ng-class="'item-'+($index+1)" class="item-thumbnail-left item-icon-right">
-      <img src="" data-ng-src="{{movieList.post_movie_banner}}" alt="{{movieList.post_movie_title}}" />
+      <img src="" data-ng-src="{{movieList.post_movie_img}}" alt="{{movieList.post_movie_title}}" />
       <h2>{{movieList.post_movie_title}}</h2>
       <p><strong>Release Year:</strong> {{movieList.post_movie_year}}</p>
       <p><strong>Rating:</strong> {{movieList.post_movie_rating}}</p>
