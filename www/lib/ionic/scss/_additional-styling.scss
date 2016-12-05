@@ -1,7 +1,49 @@
+.slider {
+  background-color: $dark;
+}
+.slider-slide {
+
+  h3, h5 {
+    color: $light;
+  }
+  .background-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include background-size(cover);
+    @include filter(blur, 5px);
+    z-index: 1;
+  }
+  .background-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    background: -moz-linear-gradient(top,rgba(29,29,29,0.65) 0,rgba(29,29,29,1) 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(29,29,29,0.5)),color-stop(100%,rgba(29,29,29,1)));
+    background: -webkit-linear-gradient(top,rgba(29,29,29,0.65) 0,rgba(29,29,29,1) 100%);
+    background: -o-linear-gradient(top,rgba(29,29,29,0.65) 0,rgba(29,29,29,1) 100%);
+    background: -ms-linear-gradient(top,rgba(29,29,29,0.65) 0,rgba(29,29,29,1) 100%);
+    background: linear-gradient(to bottom,rgba(29,29,29,0.65) 0,rgba(29,29,29,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#801d1d1d',endColorstr='#1d1d1d',GradientType=0)
+  }
+}
 .slider-content-wrapper {
   height: calc(100vh - 44px);
   padding-bottom: 50px;
   display: table;
+  position: relative;
+  z-index: 10;
   width: 100%;
 }
 
@@ -9,6 +51,11 @@
   position: relative;
   display: table-cell;
   vertical-align: middle;
+}
+.slider-pager {
+  .slider-pager-page {
+    color: $light;
+  }
 }
 
 .list-category {

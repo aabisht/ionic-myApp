@@ -8,3 +8,6 @@ hooks/
 .bowerrc
 .editorconfig
 .idea/
+res/
+resources/
+config.xml

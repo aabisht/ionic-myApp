@@ -1,6 +1,8 @@
 <ion-content>
   <ion-slide-box data-ng-if="AppCtrl.movieData" data-auto-play="true">
     <ion-slide data-ng-repeat="sliderContent in AppCtrl.movieData.posts | orderBy: '-post_movie_rating' | limitTo: 5 ">
+      <div class="background-image" style="background-image: url('{{sliderContent.post_movie_img}}')"></div>
+      <div class="background-overlay"></div>
       <div class="slider-content-wrapper">
         <div class="slider-content text-center">
           <h3 href="{{sliderContent.post_movie_web_url}}" data-ui-sref="moviePageView({movie: sliderContent.post_movie_app_url})">{{sliderContent.post_movie_title}}</h3>

@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
       });
     ++self.pageNumber;
     $scope.$broadcast('scroll.infiniteScrollComplete');
-  }
+  };
 
   facadeApiFactory.showLoading();
   function init() {

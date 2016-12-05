@@ -30,7 +30,8 @@
 
       hideLoading: function () {
         $ionicLoading.hide();
-      }
+      },
+
 
     }
     return collection;

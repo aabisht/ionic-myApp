@@ -15,7 +15,7 @@ app.run(function($ionicPlatform, facadeApiFactory) {
 
   facadeApiFactory.updateBrowserTitle("Test");
 
-})
+});
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -36,7 +36,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/movie/{movie}',
       controller: 'MovieDetailController',
       controllerAs: 'MovieDetailCtrl'
-    })
+    });
   $urlRouterProvider.otherwise('index');
 });
 
@@ -51,3 +51,4 @@ app.constant('CONSTANTS', {
   base_API_URL: "http://testnode25.herokuapp.com"
 
 });
+
